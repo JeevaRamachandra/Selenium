@@ -1,0 +1,19 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo {
+public static void main(String[] args){
+	System.setProperty("webdriver.chrome.driver", 
+			"C:\\Users\\ELCOT\\eclipse-workspace\\Janani\\Driver\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://www.facebook.com/login/");
+	WebElement txtmail = driver.findElement(By.id("email"));
+	txtmail.sendKeys("jeeva janani");
+	WebElement txtPw = driver.findElement(By.name("pass"));
+	txtPw.sendKeys("12345");
+	WebElement button = driver.findElement(By.id("loginbutton"));
+	button.click();
+}
+}
